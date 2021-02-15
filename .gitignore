@@ -10,3 +10,9 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+.vscode/extensions.json
+.vscode/settings.json
+nbproject/project.properties
+nbproject/project.xml
+nbproject/private/private.properties
+nbproject/private/private.xml
