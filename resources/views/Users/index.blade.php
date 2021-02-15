@@ -1,22 +1,10 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-  <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<title>Laravel</title>
-
-	<!-- Fonts -->
-	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-
-	<!-- Styles -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
-  </head>
-  <body>
+@extends('layouts.app')
+@section('content')
 	<div class="container">
-			<div class="row">
-				<div class="col-sm-8 mx-auto">
+		<div class="row">
+			<div class="col-sm-8 mx-auto">
+				@guest
+				@else
 				<div class="card border-0 shadow">
 					<form action="{{ route('users.store') }}" method="post">
 						<div class="card-body">
@@ -50,6 +38,7 @@
 						</div>
 					</form>
 				</div>
+				@endguest
 				<table class="table">
 					<thead>
 						<tr>
@@ -66,6 +55,9 @@
 							<td>{{ $user->name }}</td>
 							<td>{{ $user->email }}</td>
 							<td>
+								@guest
+								&nbsp;
+								@else
 								<form action="{{ route('users.destroy', $user) }}" method="post">
 									@method('DELETE')
 									@csrf
@@ -76,14 +68,13 @@
 										onclick="return confirm('Are you sure to delete the user {{ $user->name }}?')"
 									/>
 								</form>
+								@endguest
 							</td>
 						</tr>
 						@endforeach
 					</tbody>
 				</table>
-				</div>
 			</div>
 		</div>
-
-  </body>
-</html>
+	</div>
+@endsection
