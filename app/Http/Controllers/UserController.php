@@ -5,7 +5,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use Illuminate\Http\Request;
+use App\Http\Requests\UserResquest;
 class UserController extends Controller
 {
 	/**
@@ -21,18 +21,10 @@ class UserController extends Controller
 
 	/**
 	 * Receive a Request objet with the data from the form and sotre in the User DB
-   * @param Request $request
+   * @param UserResquest $request
    * @return type
    */
-	public function store(Request $request){
-		/**
-		 * Validate required fields and also email format and min length
-		 */
-		$request->validate([
-			'name' => ['required'],
-			'email' => ['required', 'email', 'min:8', 'unique:users'],
-			'password' => ['required', 'min:8'],
-		]);
+	public function store(UserResquest $request){
 		User::create([
 			'name' => $request->name,
 			'email' => $request->email,
