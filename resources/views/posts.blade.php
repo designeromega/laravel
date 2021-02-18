@@ -9,6 +9,13 @@
 				<div class="card-header card-title"> {{ $post->title }}</div>
 
 				<div class="card-body">
+					@if ($post->image)
+						<img class="card-img-top" src="{{ $post->get_image }}" alt="">
+					@else ($post->iframe)
+						<div class="embed-responsive embed-responsive-16by9">
+							{!! $post->iframe !!}
+						</div>
+					@endif
 					<p class="card-text">
 						{{ $post->get_excerpt }}
 						<a href="{{ route('post',$post) }}">Leer mas</a>
