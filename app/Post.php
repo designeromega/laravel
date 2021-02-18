@@ -18,9 +18,18 @@ class Post extends Model
 	{
 		return [
 			'slug' => [
-				'source' => 'title',
-				'onupdate' => true
-			]
+				'source'             => 'title',
+				'onUpdate'           => true,
+				'separator'          => '-',
+				'method'             => null,
+				'unique'             => true,
+				'uniqueSuffix'       => null,
+				'includeTrashed'     => false,
+				'reserved'           => null,
+				'maxLength'          => null,
+				'maxLengthKeepWords' => true,
+				'slugEngineOptions'  => [],
+				]
 		];
 	}
 }

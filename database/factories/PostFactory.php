@@ -6,7 +6,9 @@ use App\Post;
 use Faker\Generator as Faker;
 
 $factory->define(Post::class, function (Faker $faker) {
-    return [
-        //
-    ];
+	return [
+		'user_id' =>1,
+		'title' => $faker->sentence,
+		'body' => $faker->text(800),
+	];
 });
