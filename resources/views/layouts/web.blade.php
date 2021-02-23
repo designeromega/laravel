@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Cursos Web</title>
 	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
@@ -12,11 +12,11 @@
 		<div class="bg-blue-900 py-1"></div>
 		<nav class="bg-blue-800 py-2">
 			<a href="{{ route('home') }}">
-			<img 
-				src="{{ asset('images/isotipo-platzi.png') }}" 
-				class="h-8 mx-auto"
-			>
-			<ap>
+				<img 
+					src="{{ asset('images/isotipo-platzi.png') }}" 
+					class="h-8 mx-auto"
+				/>
+			</a>
 		</nav>
 	</header>
 	<main class="py-10">
