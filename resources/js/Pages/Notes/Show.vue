@@ -16,7 +16,7 @@
 						</div>
 					</div>
 					<div class="md:col-span-2 mt-5 md:mt-0">
-						<div class="shadow bg_white md:rounded-md p4">
+						<div class="shadow bg-white md:rounded-md p-4">
 							<p>{{ note.content }}</p>
 							<hr class="my-6" />
 							<inertia-link :href="route('notes.index')">

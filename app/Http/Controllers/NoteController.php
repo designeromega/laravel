@@ -60,7 +60,7 @@ class NoteController extends Controller
 	 */
 	public function edit(Note $note)
 	{
-		//
+		return Inertia::render('Notes/Edit', compact('note'));
 	}
 
 	/**
@@ -72,7 +72,12 @@ class NoteController extends Controller
 	 */
 	public function update(Request $request, Note $note)
 	{
-		//
+		$request->validate([
+			'excerpt' => 'required',
+			'content' => 'required',
+		]);
+		$note->update($request->all());
+		return redirect()->route('notes.index');
 	}
 
 	/**
