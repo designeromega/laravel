@@ -45,6 +45,10 @@
 									Editar
 								</button>
 							</form>
+							<hr class="my-6" />
+							<a href="#" @click.prevent="destroy">
+								Eliminar
+							</a>
 						</div>
 					</div>
 				</div>
@@ -77,6 +81,13 @@
 					this.route('notes.update', 
 					this.note.id), 
 					this.form)
+			},
+			destroy() {
+				if (confirm('¿Desea Eliminar?')){
+				this.$inertia.delete(
+					this.route('notes.destroy', 
+					this.note.id))
+				}
 			}
 		}
 	}
