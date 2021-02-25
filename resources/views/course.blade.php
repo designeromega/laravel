@@ -38,6 +38,11 @@
 					</p>
 				</div>
 			</div>
+			<div class="grid grid-cols-2 gap-4 mt-8">
+				@foreach($course->similar() as $course)
+				<x-course-card :course="$course" />
+				@endforeach
+			</div>
 		</div>
 	</div>
 
